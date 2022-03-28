@@ -3,7 +3,7 @@ package com.Group1.entity;
 import javax.persistence.*; //Связь с БД (ORM)
 
 @Entity //Сущность
-@Table(name = "Client")
+@Table(name = "CLIENT")
 public class Client {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY) //Автомат
