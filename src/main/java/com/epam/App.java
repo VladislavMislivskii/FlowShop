@@ -4,6 +4,7 @@ import com.epam.service.ClientService;
 import com.epam.service.PositionService;
 import com.epam.service.EmployeeService;
 import com.epam.service.CourTypeService;
+import com.epam.service.CourierService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,6 +21,9 @@ public class App implements CommandLineRunner {
     private EmployeeService EmployeeService;
     @Autowired
     private CourTypeService CourTypeService;
+    @Autowired
+    private CourierService CourierService;
+
 
     public static void main( String[] args ) {
         SpringApplication.run(App.class, args);
@@ -38,7 +42,10 @@ public class App implements CommandLineRunner {
 //        productService.getAll().forEach(System.out::println);
 //        System.out.println("Employee");
 //        EmployeeService.getAll().forEach(System.out::println);
-        System.out.println("COURTYPE");
-        CourTypeService.getAll().forEach(System.out::println);
+//                System.out.println("COURTYPE");
+//        CourTypeService.getAll().forEach(System.out::println);
+
+        System.out.println("COUR");
+        CourierService.getAll().forEach(System.out::println);
     }
 }
