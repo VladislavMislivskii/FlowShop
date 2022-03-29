@@ -7,6 +7,8 @@ import com.epam.service.CourTypeService;
 import com.epam.service.CourierService;
 import com.epam.service.TransportService;
 import com.epam.service.RouteService;
+import com.epam.service.OrdStatusService;
+import com.epam.service.OrderService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -29,6 +31,10 @@ public class App implements CommandLineRunner {
     private TransportService TransportService;
     @Autowired
     private RouteService RouteService;
+    @Autowired
+    private OrdStatusService OrdStatusService;
+    @Autowired
+    private OrderService OrderService;
 
 
     public static void main( String[] args ) {
@@ -57,9 +63,14 @@ public class App implements CommandLineRunner {
 //        System.out.println("Transport");
 //        TransportService.getAll().forEach(System.out::println);
 
-        System.out.println("Route");
-        RouteService.getAll().forEach(System.out::println);
+//        System.out.println("Route");
+//        RouteService.getAll().forEach(System.out::println);
 
+//        System.out.println("ordStatus");
+//        OrdStatusService.getAll().forEach(System.out::println);
+
+        System.out.println("Order");
+        OrderService.getAll().forEach(System.out::println);
 
     }
 }

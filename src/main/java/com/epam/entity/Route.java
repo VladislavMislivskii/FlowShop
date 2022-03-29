@@ -1,4 +1,5 @@
 package com.epam.entity;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -20,15 +21,7 @@ public class Route {
     @Column(name = "DATE_ARRIVAL")
     private Date date_arrival;
 
-    @Override
-    public String toString() {
-        return "Route{" +
-                "id=" + id +
-                ", courier='" + courier + '\'' +
-                ", transport='" + transport + '\'' +
-                ", date_departure='" + date_departure + '\'' +
-                ", date_arrival='" + date_arrival + '\'' +
-                '}';
+    public Route() {
     }
 
     public Route(Long id, Courier courier, Transport transport, Date date_departure, Date date_arrival) {
@@ -38,8 +31,7 @@ public class Route {
         this.date_departure = date_departure;
         this.date_arrival = date_arrival;
     }
-    public Route() {
-    }
+
 
     public Long getId() {
         return id;
@@ -79,6 +71,17 @@ public class Route {
 
     public void setDate_arrival(Date date_arrival) {
         this.date_arrival = date_arrival;
+    }
+
+    @Override
+    public String toString() {
+        return "Route{" +
+                "id=" + id +
+                ", courier='" + courier + '\'' +
+                ", transport='" + transport + '\'' +
+                ", date_departure='" + date_departure + '\'' +
+                ", date_arrival='" + date_arrival + '\'' +
+                '}';
     }
 }
 

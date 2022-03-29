@@ -1,9 +1,11 @@
 package com.epam.repository;
 
-import com.epam.entity.Employee;
+
+import com.epam.entity.OrdStatus;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
 @Repository
-public interface EmployeeRepository  extends CrudRepository<Employee, String> {
+public interface OrdStatusRepository  extends CrudRepository<OrdStatus, String> {
 
 }
