@@ -1,7 +1,11 @@
 package com.epam;
 
 import com.epam.service.ClientService;
+import com.epam.service.DecorationService;
+import com.epam.service.FlowerService;
+import com.epam.service.BouquetService;
 import com.epam.service.PositionService;
+import com.epam.service.ReqStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +17,14 @@ public class App implements CommandLineRunner {
     private ClientService clientService;
     @Autowired
     private PositionService positionService;
+    @Autowired
+    private FlowerService flowerService;
+    @Autowired
+    private DecorationService DecorationService;
+    @Autowired
+    private BouquetService BouquetService;
+    @Autowired
+    private ReqStatusService ReqStatusService;
 
 
     public static void main( String[] args ) {
@@ -23,11 +35,16 @@ public class App implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        System.out.println("Client");
 //        clientService.getAll().forEach(System.out::println);
-          System.out.println("Position");
-          positionService.getAll().forEach(System.out::println);
-//        productService.add(new Product("candy", 150));
-//        System.out.println("Product after");
-//        productService.getAll().forEach(System.out::println);
+//          System.out.println("Position");
+//          positionService.getAll().forEach(System.out::println);
+//          System.out.println("Flower");
+//          flowerService.getAll().forEach(System.out::println);
+            System.out.println("Decoration");
+            DecorationService.getAll().forEach(System.out::println);
+            System.out.println("Bouquet");
+            BouquetService.getAll().forEach(System.out::println);
+            System.out.println("ReqStatus");
+            ReqStatusService.getAll().forEach(System.out::println);
 
     }
 }

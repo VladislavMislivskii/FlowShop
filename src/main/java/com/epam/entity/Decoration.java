@@ -3,25 +3,26 @@ package com.epam.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "POSITION")
-public class Position {
+@Table(name = "DECORATION")
+public class Decoration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_POSITION")
+    @Column(name = "ID_Decoration")
     private Long id;
     @Column(name = "NAME")
     private String name;
-    @Column(name = "COMMENT")
-    private String сomment;
+    @Column(name = "AMOUNT")
+    private long amount;
 
 
-    public Position() {
+    public Decoration() {
     }
 
-    public Position(Long id, String name, String сomment) {
+    public Decoration(Long id, String name, Long price, Long amount) {
         this.id = id;
         this.name = name;
-        this.сomment = сomment;
+        this.amount = amount;
+
     }
 
     public Long getId() {
@@ -40,20 +41,18 @@ public class Position {
         this.name = name;
     }
 
-    public String getСomment() {
-        return сomment;
-    }
 
-    public void setСomment(String сomment) {
-        this.сomment = сomment;
-    }
+    public Long getAmount() { return amount; }
+
+    public void setAmount(Long amount) { this.amount = amount;}
+
 
     @Override
     public String toString() {
-        return "Position{" +
+        return "Decoration{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", сomment='" + сomment + '\''+
+                ", amount='" + amount + '\'' +
                 '}';
     }
 }
