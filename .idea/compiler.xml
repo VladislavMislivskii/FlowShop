@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="FlowShop" />
         <module name="flower-delivery" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="flower-delivery" target="8" />
+      <module name="FlowShop" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
