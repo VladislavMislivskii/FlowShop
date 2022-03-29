@@ -11,7 +11,7 @@ public class Client {
     private Long id;
     @Column(name = "FNAME")
     private String name;
-    @Column(name = "LName")
+    @Column(name = "LNAME")
     private String surname;
     @Column(name = "EMAIL")
     private String email;
@@ -78,7 +78,7 @@ public class Client {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", имэил='" + email + '\'' +
+                ", Email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 '}';
     }

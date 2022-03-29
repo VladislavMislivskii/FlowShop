@@ -2,6 +2,8 @@ package com.epam.entity;
 
 import javax.persistence.*;
 
+import java.util.Collection;
+
 @Entity
 @Table(name = "Position")
 public class Position {
@@ -13,7 +15,6 @@ public class Position {
     private String name;
     @Column(name = "COMMENT")
     private String сomment;
-
 
     public Position() {
     }
