@@ -2,27 +2,24 @@ package com.epam.entity;
 
 import javax.persistence.*;
 
-import java.util.Collection;
-
 @Entity
-@Table(name = "POSITION")
-public class Position {
+@Table(name = "COURTYPE")
+public class CourType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_POSITION")
+    @Column(name = "ID_COURTYPE")
     private Long id;
     @Column(name = "NAME")
     private String name;
-    @Column(name = "COMMENT")
-    private String сomment;
+    @Column(name = "MAX_RANGE")
+    private int max_range;
 
-    public Position() {
-    }
-
-    public Position(Long id, String name, String сomment) {
+    public CourType(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.сomment = сomment;
+    }
+
+    public CourType() {
     }
 
     public Long getId() {
@@ -41,20 +38,20 @@ public class Position {
         this.name = name;
     }
 
-    public String getСomment() {
-        return сomment;
+    public int getMax_range() {
+        return max_range;
     }
 
-    public void setСomment(String сomment) {
-        this.сomment = сomment;
+    public void setMax_range(int max_range) {
+        this.max_range = max_range;
     }
 
     @Override
     public String toString() {
-        return "Position{" +
+        return "COURTYPE {" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", сomment='" + сomment + '\''+
+                ", max_range='" + max_range + '\'' +
                 '}';
     }
 }
