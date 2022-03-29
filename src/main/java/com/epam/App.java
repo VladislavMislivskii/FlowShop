@@ -1,6 +1,7 @@
 package com.epam;
 
 import com.epam.service.ClientService;
+import com.epam.service.PositionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class App implements CommandLineRunner {
     @Autowired
     private ClientService clientService;
+    @Autowired
+    private PositionService positionService;
 
 
     public static void main( String[] args ) {
@@ -18,9 +21,10 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Client");
-        clientService.getAll().forEach(System.out::println);
-
+//        System.out.println("Client");
+//        clientService.getAll().forEach(System.out::println);
+          System.out.println("Position");
+          positionService.getAll().forEach(System.out::println);
 //        productService.add(new Product("candy", 150));
 //        System.out.println("Product after");
 //        productService.getAll().forEach(System.out::println);
