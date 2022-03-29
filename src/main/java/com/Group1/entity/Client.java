@@ -10,23 +10,23 @@ public class Client {
         @Column(name = "ID")
         private Long id;
 
-        @Column(name = "FNAME")
-        private String fname;
+        @Column(name = "FName")
+        private String FName;
 
-        @Column(name = "LNAME")
-        private String lname;
+        @Column(name = "LName")
+        private String LName;
 
-        @Column(name = "PNAME")
-        private String pname;
+        @Column(name = "PName")
+        private String PName;
 
-        @Column(name = "EMAIL")
-        private String email;
+        @Column(name = "Email")
+        private String Email;
 
-        @Column(name = "PHONE")
-        private String phone;
+        @Column(name = "Phone")
+        private String Phone;
 
-        @Column(name = "PASSWORD")
-        private String password;
+        @Column(name = "Password")
+        private String Password;
 
         public Long getId() {
                 return id;
@@ -36,64 +36,64 @@ public class Client {
                 this.id = id;
         }
 
-        public String getFname() {
-                return fname;
+        public String getFName() {
+                return FName;
         }
 
-        public void setFname(String fname) {
-                this.fname = fname;
+        public void setFName(String FName) {
+                this.FName = FName;
         }
 
-        public String getLname() {
-                return lname;
+        public String getLName() {
+                return LName;
         }
 
-        public void setLname(String lname) {
-                this.lname = lname;
+        public void setLName(String LName) {
+                this.LName = LName;
         }
 
-        public String getPname() {
-                return pname;
+        public String getPName() {
+                return PName;
         }
 
-        public void setPname(String pname) {
-                this.pname = pname;
+        public void setPName(String PName) {
+                this.PName = PName;
         }
 
         public String getEmail() {
-                return email;
+                return Email;
         }
 
         public void setEmail(String email) {
-                this.email = email;
+                Email = email;
         }
 
         public String getPhone() {
-                return phone;
+                return Phone;
         }
 
         public void setPhone(String phone) {
-                this.phone = phone;
+                Phone = phone;
         }
 
         public String getPassword() {
-                return password;
+                return Password;
         }
 
         public void setPassword(String password) {
-                this.password = password;
+                Password = password;
         }
 
         @Override
         public String toString() {
                 return "Client{" +
                         "id=" + id +
-                        ", FName='" + fname + '\'' +
-                        ", LName='" + lname + '\'' +
-                        ", PName='" + pname + '\'' +
-                        ", Email='" + email + '\'' +
-                        ", Phone='" + phone + '\'' +
-                        ", Password='" + password + '\'' +
+                        ", FName='" + FName + '\'' +
+                        ", LName='" + LName + '\'' +
+                        ", PName='" + PName + '\'' +
+                        ", Email='" + Email + '\'' +
+                        ", Phone='" + Phone + '\'' +
+                        ", Password='" + Password + '\'' +
                         '}';
         }
 }
