@@ -1,27 +1,20 @@
-package com.epam.entity;
+package com.epam.dto;
 
-import javax.persistence.*;
+import com.epam.entity.Client;
 
-@Entity
-@Table(name = "Client")
-public class Client {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+import java.io.Serializable;
+
+public class NewClientDTO implements Serializable {
     private Long id;
-    @Column(name = "FNAME")
     private String name;
-    @Column(name = "LNAME")
     private String surname;
-    @Column(name = "EMAIL")
     private String email;
-    @Column(name = "PHONE")
     private String phone;
 
-    public Client() {
+    public NewClientDTO() {
     }
 
-    public Client(Long id, String name, String surname, String email, String phone) {
+    public NewClientDTO(Long id, String name, String surname, String email, String phone) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -29,8 +22,22 @@ public class Client {
         this.phone = phone;
     }
 
+    public NewClientDTO(Client client) {
+        if (client == null) {
+            throw new IllegalArgumentException();
+        }
+        this.id = client.getId();
+
+        this.email = client.getEmail();
+        this.phone = client.getPhone();
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -63,16 +70,5 @@ public class Client {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
     }
 }
