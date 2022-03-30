@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "COrder")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +32,7 @@ public class Order {
     @OneToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "ROUTEORDERS",
             joinColumns = @JoinColumn(name = "ID_ORDER"),
-            inverseJoinColumns = @JoinColumn(name = "ID_EMPLOYEE"))
+            inverseJoinColumns = @JoinColumn(name = "ID_ROUTE"))
     private Set<Route> route;
 
     @Override
