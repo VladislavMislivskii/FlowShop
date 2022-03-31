@@ -1,4 +1,5 @@
 package com.epam.service;
+import com.epam.entity.Client;
 import com.epam.entity.Request;
 import com.epam.repository.RequestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,13 @@ public class RequestService {
         Iterable<Request> queryResult = requestRepository.findAll();
         return StreamSupport.stream(queryResult.spliterator(), false)
                 .collect(Collectors.toList());
+    }
+
+    public void create(Request request) {
+        requestRepository.save(request);
+    }
+
+    public List<Request> list() {
+        return (List<Request>) requestRepository.findAll();
     }
 }

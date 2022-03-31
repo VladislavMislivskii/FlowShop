@@ -48,12 +48,12 @@
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-////            System.out.println("Client");
-////            clientService.getAll().forEach(System.out::println);
-////          System.out.println("Position");
+//            System.out.println("Client");
+//            clientService.getAll().forEach(System.out::println);
+//          System.out.println("Position");
 //
-////              System.out.println("Order");
-////              OrderService.getAll().forEach(System.out::println);
+//              System.out.println("Order");
+//              OrderService.getAll().forEach(System.out::println);
 //
 //        @GetMapping
 //        public String hello() {
