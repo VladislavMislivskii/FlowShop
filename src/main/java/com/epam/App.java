@@ -1,5 +1,6 @@
 package com.epam;
 
+        import com.epam.service.FlowerService;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.boot.CommandLineRunner;
         import org.springframework.boot.SpringApplication;
@@ -15,6 +16,9 @@ package com.epam;
 public class App implements CommandLineRunner {
     @Autowired
     private RequestService RequestService;
+    @Autowired
+    private FlowerService FlowerService;
+
 
 
     public static void main( String[] args ) {
@@ -29,8 +33,8 @@ public class App implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception{
-           System.out.println("Request");
-           RequestService.getAll().forEach(System.out::println);
+           System.out.println("Flower");
+           FlowerService.getAll().forEach(System.out::println);
     }
 
 }

@@ -33,8 +33,16 @@ public class FlowerService {
     }
 
     public List<Flower> list() {
+
         return (List<Flower>) flowerRepository.findAll();
     }
 
 
+    public void deleteById(long FlowerId) {
+        flowerRepository.deleteById(FlowerId);
+    }
+
+    public Optional<Flower> findById(Long flowerId) {
+        return (Optional<Flower>) flowerRepository.findById(flowerId);
+    }
 }
