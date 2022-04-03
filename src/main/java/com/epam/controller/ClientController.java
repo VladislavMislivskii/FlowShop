@@ -1,9 +1,8 @@
 package com.epam.controller;
 
+import com.epam.dto.ClientDTO;
 import com.epam.dto.NewClientDTO;
-import com.epam.entity.Client;
 import com.epam.service.ClientService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,14 +18,12 @@ public class ClientController {
     }
 
     @GetMapping()
-    public List<Client> getAll() {
+    public List<ClientDTO> getAll() {
         return clientService.getAll();
     }
 
     @PostMapping()
-    public List<Client> create(@RequestBody Client client) {
-        clientService.create(client);
-        return clientService.list();
-
+    public void  create(@RequestBody NewClientDTO newClientDTO) {
+        clientService.create(newClientDTO);
     }
 }

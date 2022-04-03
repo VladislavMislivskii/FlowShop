@@ -25,6 +25,5 @@ public class RequestController {
     public List<Request> create(@RequestBody Request request) {
         requestService.create(request);
         return requestService.list();
-
     }
 }

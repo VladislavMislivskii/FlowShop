@@ -27,7 +27,8 @@ public class NewClientDTO implements Serializable {
             throw new IllegalArgumentException();
         }
         this.id = client.getId();
-
+        this.name = client.getName();
+        this.surname = client.getSurname();
         this.email = client.getEmail();
         this.phone = client.getPhone();
     }

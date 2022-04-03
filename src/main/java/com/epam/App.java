@@ -40,12 +40,6 @@ public class App implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception{
-           System.out.println("BouquetService");
-           BouquetService.getAll().forEach(System.out::println);
-
-           System.out.println("BouqcompflowService");
-        ReqproductService.getAll().forEach(System.out::println);
-
     }
 
 }
