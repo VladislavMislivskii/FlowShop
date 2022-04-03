@@ -9,7 +9,7 @@ import java.nio.file.Path;
 public class Flower {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Flower")
+    @Column(name = "ID_FLOWER")
     private Long id;
     @Column(name = "NAME")
     private String name;

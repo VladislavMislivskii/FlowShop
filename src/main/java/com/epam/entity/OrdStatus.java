@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class OrdStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_ORDSTATUS ")
+    @Column(name = "ID_ORDSTATUS")
     private Long id;
 
     @Column(name = "STATUS")

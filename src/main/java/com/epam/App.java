@@ -1,13 +1,16 @@
 package com.epam;
 
-        import com.epam.service.FlowerService;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.boot.CommandLineRunner;
-        import org.springframework.boot.SpringApplication;
-        import org.springframework.boot.autoconfigure.SpringBootApplication;
-        import org.springframework.web.bind.annotation.GetMapping;
-        import org.springframework.web.bind.annotation.RestController;
-        import com.epam.service.RequestService;
+import com.epam.service.BouquetService;
+import com.epam.service.FlowerService;
+import com.epam.service.BouqcompflowService;
+import com.epam.service.ReqproductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.epam.service.RequestService;
 
 
 @SpringBootApplication
@@ -18,6 +21,10 @@ public class App implements CommandLineRunner {
     private RequestService RequestService;
     @Autowired
     private FlowerService FlowerService;
+    @Autowired
+    private BouquetService BouquetService;
+    @Autowired
+    private ReqproductService ReqproductService;
 
 
 
@@ -33,8 +40,12 @@ public class App implements CommandLineRunner {
     }
     @Override
     public void run(String... args) throws Exception{
-           System.out.println("Flower");
-           FlowerService.getAll().forEach(System.out::println);
+           System.out.println("BouquetService");
+           BouquetService.getAll().forEach(System.out::println);
+
+           System.out.println("BouqcompflowService");
+        ReqproductService.getAll().forEach(System.out::println);
+
     }
 
 }

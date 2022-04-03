@@ -20,7 +20,6 @@ public class BouquetService {
 
     public List<Bouquet> getAll() {
         Iterable<Bouquet> queryResult = bouquetRepository.findAll();
-
         return StreamSupport.stream(queryResult.spliterator(), false)
                 .collect(Collectors.toList());
     }

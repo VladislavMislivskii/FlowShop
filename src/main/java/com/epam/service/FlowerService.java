@@ -1,7 +1,6 @@
 package com.epam.service;
 
 import com.epam.entity.Flower;
-import com.epam.entity.Flower;
 import com.epam.repository.FlowerRepository;
 import com.sun.istack.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
