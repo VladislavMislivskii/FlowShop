@@ -34,8 +34,7 @@ public class FlowerService {
         flowerRepository.save(ConvertManager.convert(newFlowerDTO)).getId();
     }
 
-    public List<Flower> LastItem() {
-
+    public List<Flower> lastItem() {
         return (List<Flower>) flowerRepository.findFirstByOrderByIdDesc();
     }
 

@@ -27,13 +27,14 @@ public class FlowerController {
     @PostMapping()
     public List<Flower> create(@RequestBody NewFlowerDTO newFlowerDTO) {
         flowerService.create(newFlowerDTO);
-        return flowerService.LastItem();
+        return flowerService.lastItem();
     }
 
     @DeleteMapping(path="/{id}")
     public void delete(@PathVariable Long id){
         flowerService.deleteById(id);
     }
+
     @GetMapping(path="/{id}")
     public Optional<Flower> findById(@PathVariable(value = "id") Long flowerId) {
         return flowerService.findById(flowerId);

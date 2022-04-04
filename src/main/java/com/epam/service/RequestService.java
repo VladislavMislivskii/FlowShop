@@ -1,7 +1,10 @@
 package com.epam.service;
-import com.epam.entity.Client;
+
+import com.epam.dto.NewRequestDTO;
+import com.epam.dto.RequestDTO;
 import com.epam.entity.Request;
 import com.epam.repository.RequestRepository;
+import com.epam.util.ConvertManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,17 +21,18 @@ public class RequestService {
         this.requestRepository = requestRepository;
     }
 
-    public List<Request> getAll() {
+    public List<RequestDTO> getAll() {
         Iterable<Request> queryResult = requestRepository.findAll();
         return StreamSupport.stream(queryResult.spliterator(), false)
+                .map(RequestDTO::new)
                 .collect(Collectors.toList());
     }
 
-    public void create(Request request) {
-        requestRepository.save(request);
+    public void create(NewRequestDTO newRequestDTO) {
+        requestRepository.save(ConvertManager.convert(newRequestDTO)).getId();
     }
 
-    public List<Request> list() {
-        return (List<Request>) requestRepository.findAll();
+    public List<Request> lastItem() {
+        return (List<Request>) requestRepository.findFirstByOrderByIdDesc();
     }
 }

@@ -1,5 +1,7 @@
 package com.epam.controller;
 
+import com.epam.dto.NewRequestDTO;
+import com.epam.dto.RequestDTO;
 import com.epam.entity.Request;
 import com.epam.service.RequestService;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +19,13 @@ public class RequestController {
     }
 
     @GetMapping()
-    public List<Request> getAll() {
+    public List<RequestDTO> getAll() {
         return requestService.getAll();
     }
 
     @PostMapping()
-    public List<Request> create(@RequestBody Request request) {
-        requestService.create(request);
-        return requestService.list();
+    public List<Request> create(@RequestBody NewRequestDTO newRequestDTO) {
+        requestService.create(newRequestDTO);
+        return requestService.lastItem();
     }
 }

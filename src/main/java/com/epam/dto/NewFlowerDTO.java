@@ -1,7 +1,5 @@
 package com.epam.dto;
 
-import com.epam.entity.Flower;
-
 import java.io.Serializable;
 
 public class NewFlowerDTO implements Serializable {
@@ -21,16 +19,6 @@ public class NewFlowerDTO implements Serializable {
         this.photo = photo;
     }
 
-    public NewFlowerDTO(Flower flower) {
-        if (flower == null) {
-            throw new IllegalArgumentException();
-        }
-        this.id = flower.getId();
-        this.name = flower.getName();
-        this.price = flower.getPrice();
-        this.amount = flower.getAmount();
-        this.photo = flower.getPhoto();
-    }
 
     public String getPhoto() {
         return photo;

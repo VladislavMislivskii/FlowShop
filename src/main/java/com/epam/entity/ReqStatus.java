@@ -18,11 +18,14 @@ public class ReqStatus {
     public ReqStatus() {
     }
 
-    public ReqStatus(Long id, String name, String comment) {
+    public ReqStatus(Long id) {
+        this.id = id;
+    }
+
+    public ReqStatus(Long id, String status, String comment) {
         this.id = id;
         this.status = status;
         this.comment = comment;
-
     }
 
     public Long getId() {
@@ -41,11 +44,13 @@ public class ReqStatus {
         this.status = status;
     }
 
+    public String getComment() {
+        return comment;
+    }
 
-    public String getComment() { return comment; }
-
-    public void setComment(String comment) { this.comment = comment;}
-
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     @Override
     public String toString() {

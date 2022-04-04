@@ -33,7 +33,4 @@ public class ClientService {
          clientRepository.save(ConvertManager.convert(newClientDTO)).getId();
     }
 
-//    public List<Client> list() {
-//        return (List<Client>) clientRepository.findAll();
-//    }
 }

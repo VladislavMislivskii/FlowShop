@@ -1,7 +1,5 @@
 package com.epam.dto;
 
-import com.epam.entity.Client;
-
 import java.io.Serializable;
 
 public class NewClientDTO implements Serializable {
@@ -20,17 +18,6 @@ public class NewClientDTO implements Serializable {
         this.surname = surname;
         this.email = email;
         this.phone = phone;
-    }
-
-    public NewClientDTO(Client client) {
-        if (client == null) {
-            throw new IllegalArgumentException();
-        }
-        this.id = client.getId();
-        this.name = client.getName();
-        this.surname = client.getSurname();
-        this.email = client.getEmail();
-        this.phone = client.getPhone();
     }
 
     public Long getId() {
