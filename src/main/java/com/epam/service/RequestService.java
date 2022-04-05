@@ -4,6 +4,7 @@ package com.epam.service;
 import com.epam.dto.NewClientDTO;
 import com.epam.dto.NewRequestDTO;
 import com.epam.dto.RequestDTO;
+import com.epam.dto.RequestForClientDTO;
 import com.epam.entity.Request;
 import com.epam.repository.RequestRepository;
 import com.epam.util.ConvertManager;
@@ -34,9 +35,13 @@ public class RequestService {
         requestRepository.save(ConvertManager.convert(newRequestDTO)).getId();
     }
 
-    public List<Request> findByIdClient(NewClientDTO newClientDTO) {
-        return (List<Request>) requestRepository.findByClient(ConvertManager.convert(newClientDTO));
+    public List<RequestForClientDTO> findByIdClient(NewClientDTO newClientDTO) {
+        Iterable<Request> queryResult = requestRepository.findByClient(ConvertManager.convert(newClientDTO));
+        return StreamSupport.stream(queryResult.spliterator(), false)
+                .map(RequestForClientDTO::new)
+                .collect(Collectors.toList());
     }
+
     public List<Request> lastItem() {
         return (List<Request>) requestRepository.findFirstByOrderByIdDesc();
     }

@@ -25,9 +25,8 @@ public class FlowerController {
     }
 
     @PostMapping() //Администирование
-    public List<Flower> create(@RequestBody NewFlowerDTO newFlowerDTO) {
-        flowerService.create(newFlowerDTO);
-        return flowerService.lastItem();
+    public FlowerDTO create(@RequestBody NewFlowerDTO newFlowerDTO) {
+        return flowerService.create(newFlowerDTO);
     }
 
     @DeleteMapping(path="/{id}")
@@ -35,7 +34,7 @@ public class FlowerController {
         flowerService.deleteById(id);
     }
 
-    @GetMapping(path="/{id}")
+    @GetMapping(path="/{id}") //Нужно отредачить
     public Optional<Flower> findById(@PathVariable(value = "id") Long flowerId) {
         return flowerService.findById(flowerId);
     }

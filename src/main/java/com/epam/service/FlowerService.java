@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+
 @Service
 public class FlowerService {
     private final FlowerRepository flowerRepository;
@@ -30,13 +31,13 @@ public class FlowerService {
                 .collect(Collectors.toList());
     }
 
-    public void create(NewFlowerDTO newFlowerDTO) {
+    public FlowerDTO create(NewFlowerDTO newFlowerDTO) {
         flowerRepository.save(ConvertManager.convert(newFlowerDTO)).getId();
+        Flower queryResult = flowerRepository.findFirstByOrderByIdDesc();
+        FlowerDTO flowerDTO = new FlowerDTO(queryResult);
+        return flowerDTO;
     }
 
-    public List<Flower> lastItem() {
-        return (List<Flower>) flowerRepository.findFirstByOrderByIdDesc();
-    }
 
 
     public void deleteById(long FlowerId) {
@@ -46,4 +47,5 @@ public class FlowerService {
     public Optional<Flower> findById(Long flowerId) {
         return (Optional<Flower>) flowerRepository.findById(flowerId);
     }
+
 }
