@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClientRepository  extends CrudRepository<Client, String> {
     public Iterable<Client> findById(Long Id);
+    public Client findByEmail(String Email);
+    public Client findByPhone(String Phone);
 }

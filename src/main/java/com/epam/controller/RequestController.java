@@ -1,5 +1,6 @@
 package com.epam.controller;
 
+import com.epam.dto.NewClientDTO;
 import com.epam.dto.NewRequestDTO;
 import com.epam.dto.RequestDTO;
 import com.epam.entity.Request;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/requests")
+@RequestMapping("/request")
 public class RequestController {
 
     private final RequestService requestService;
@@ -18,9 +19,14 @@ public class RequestController {
         this.requestService = requestService;
     }
 
-    @GetMapping()
+    @GetMapping() //для администирование
     public List<RequestDTO> getAll() {
         return requestService.getAll();
+    }
+
+    @GetMapping(path ="/test") //для администирование
+    public List<Request> findByIdClient(@RequestBody NewClientDTO newClientDTO) {
+        return requestService.findByIdClient(newClientDTO);
     }
 
     @PostMapping()

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/flowers")
+@RequestMapping("/Flower")
 public class FlowerController {
 
     private final FlowerService flowerService;
@@ -24,7 +24,7 @@ public class FlowerController {
         return flowerService.getAll();
     }
 
-    @PostMapping()
+    @PostMapping() //Администирование
     public List<Flower> create(@RequestBody NewFlowerDTO newFlowerDTO) {
         flowerService.create(newFlowerDTO);
         return flowerService.lastItem();

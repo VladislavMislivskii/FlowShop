@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/Clients")
 public class ClientController {
 
     private final ClientService clientService;
@@ -17,13 +17,13 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @GetMapping()
+    @GetMapping() //отредачить потом (Администирование)
     public List<ClientDTO> getAll() {
         return clientService.getAll();
     }
 
-    @PostMapping()
-    public void  create(@RequestBody NewClientDTO newClientDTO) {
-        clientService.create(newClientDTO);
+    @PostMapping(path="/Registration")
+    public boolean  create(@RequestBody NewClientDTO newClientDTO) {
+        return clientService.create(newClientDTO);
     }
 }

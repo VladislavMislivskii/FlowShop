@@ -29,8 +29,18 @@ public class ClientService {
     }
 
 
-    public void create(NewClientDTO newClientDTO) {
+    public boolean create(NewClientDTO newClientDTO) {
+        if (newClientDTO.getEmail() == null && newClientDTO.getEmail() == null) {
+            return false;
+        }
+        if (newClientDTO.getEmail() != null) {
+            if (clientRepository.findByEmail(newClientDTO.getEmail()) != null) return false;
+        }
+        if (newClientDTO.getPhone() != null) {
+            if (clientRepository.findByPhone(newClientDTO.getPhone()) != null) return false;
+        }
          clientRepository.save(ConvertManager.convert(newClientDTO)).getId();
+        return true;
     }
 
 }
