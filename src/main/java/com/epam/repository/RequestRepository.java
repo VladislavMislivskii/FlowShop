@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface RequestRepository extends CrudRepository<Request, String> {
-    public List<Request> findFirstByOrderByIdDesc();
     public List<Request> findByClient(Client сlient);
+    public Request findById(Long id);
 }

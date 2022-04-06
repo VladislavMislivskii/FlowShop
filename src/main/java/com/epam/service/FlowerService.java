@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -40,12 +39,15 @@ public class FlowerService {
 
 
 
-    public void deleteById(long FlowerId) {
-        flowerRepository.deleteById(FlowerId);
+    public void deleteById(Long id) {
+        flowerRepository.deleteById(id);
     }
 
-    public Optional<Flower> findById(Long flowerId) {
-        return (Optional<Flower>) flowerRepository.findById(flowerId);
+    public FlowerDTO findById(Long flowerId) {
+
+        Flower queryResult = flowerRepository.findById(flowerId);
+        FlowerDTO flowerDTO = new FlowerDTO(queryResult);
+        return flowerDTO;
     }
 
 }

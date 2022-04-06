@@ -3,6 +3,7 @@ package com.epam.util;
 import com.epam.dto.NewClientDTO;
 import com.epam.dto.NewFlowerDTO;
 import com.epam.dto.NewRequestDTO;
+import com.epam.dto.UpdateReqStatusDTO;
 import com.epam.entity.Client;
 import com.epam.entity.Flower;
 import com.epam.entity.ReqStatus;
@@ -48,5 +49,14 @@ public class ConvertManager {
                 newRequestDTO.isPaid(),
                 newRequestDTO.getDelivery_time());
 
+    }
+    public static ReqStatus convert(UpdateReqStatusDTO updateReqStatusDTO) {
+        if (updateReqStatusDTO == null) {
+            throw new IllegalArgumentException();
+        }
+        return new ReqStatus(
+                updateReqStatusDTO.getId(),
+                updateReqStatusDTO.getStatus(),
+                updateReqStatusDTO.getComment());
     }
 }

@@ -1,10 +1,6 @@
 package com.epam.controller;
 
-import com.epam.dto.NewClientDTO;
-import com.epam.dto.NewRequestDTO;
-import com.epam.dto.RequestDTO;
-import com.epam.dto.RequestForClientDTO;
-import com.epam.entity.Request;
+import com.epam.dto.*;
 import com.epam.service.RequestService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,9 +26,13 @@ public class RequestController {
         return requestService.findByIdClient(newClientDTO);
     }
 
-    @PostMapping() //нужно отредачить
-    public List<Request> create(@RequestBody NewRequestDTO newRequestDTO) {
+    @PostMapping() //возврат работал конченно
+    public void create(@RequestBody NewRequestDTO newRequestDTO) {
         requestService.create(newRequestDTO);
-        return requestService.lastItem();
+    }
+
+    @PutMapping(path ="/{id}") //работает
+    public boolean Update(@PathVariable(value = "id") Long IdRequest, @RequestBody UpdateReqStatusDTO updateReqStatusDTO) {
+        return requestService.updateStatus(IdRequest,updateReqStatusDTO);
     }
 }

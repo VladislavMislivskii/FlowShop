@@ -1,10 +1,6 @@
 package com.epam.service;
 
-
-import com.epam.dto.NewClientDTO;
-import com.epam.dto.NewRequestDTO;
-import com.epam.dto.RequestDTO;
-import com.epam.dto.RequestForClientDTO;
+import com.epam.dto.*;
 import com.epam.entity.Request;
 import com.epam.repository.RequestRepository;
 import com.epam.util.ConvertManager;
@@ -32,7 +28,16 @@ public class RequestService {
     }
 
     public void create(NewRequestDTO newRequestDTO) {
-        requestRepository.save(ConvertManager.convert(newRequestDTO)).getId();
+        requestRepository.save(ConvertManager.convert(newRequestDTO));
+    }
+    public boolean updateStatus(long id, UpdateReqStatusDTO updateReqStatusDTO){
+        Request request = requestRepository.findById(id);
+        if (request != null) {
+            request.setReqStatus(ConvertManager.convert(updateReqStatusDTO));
+            requestRepository.save(request);
+            return true;
+        }
+        return false;
     }
 
     public List<RequestForClientDTO> findByIdClient(NewClientDTO newClientDTO) {
@@ -40,9 +45,5 @@ public class RequestService {
         return StreamSupport.stream(queryResult.spliterator(), false)
                 .map(RequestForClientDTO::new)
                 .collect(Collectors.toList());
-    }
-
-    public List<Request> lastItem() {
-        return (List<Request>) requestRepository.findFirstByOrderByIdDesc();
     }
 }

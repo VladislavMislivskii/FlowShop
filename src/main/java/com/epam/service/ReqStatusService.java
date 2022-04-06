@@ -1,5 +1,6 @@
 package com.epam.service;
 
+import com.epam.dto.ReqStatusDTO;
 import com.epam.entity.ReqStatus;
 import com.epam.repository.ReqStatusRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,11 @@ public class ReqStatusService {
         this.reqStatusRepository = reqStatusRepository;
     }
 
-    public List<ReqStatus> getAll() {
+    public List<ReqStatusDTO> getAll() {
         Iterable<ReqStatus> queryResult = reqStatusRepository.findAll();
-
         return StreamSupport.stream(queryResult.spliterator(), false)
+                .map(ReqStatusDTO::new)
                 .collect(Collectors.toList());
     }
+
 }
