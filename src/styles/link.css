@@ -1,0 +1,16 @@
+.link{
+    color: black;
+    text-decoration: underline;
+}
+
+.link:hover{
+    color: #FF8175;
+}
+
+.link:active{
+    color: #b13328;
+}
+
+.link:visited{
+    color: gray;
+}

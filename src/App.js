@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Btn_primary from './components/Btn_primary';
+import Btn_secondary from './components/Btn_secondary';
+import Checkbox from './components/Checkbox';
+import Link from './components/Link';
+import Radiobutton from './components/Radiobutton';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Кнопки</h1>
+      <div className='buttons' style={{display: 'inline-block', width: '100%'}}>
+        <Btn_primary value={"Кнопка"}/>
+        <Btn_secondary value={"Кнопка"}/>
+      </div> 
+      <h1>Иконки</h1>
+      <div className='icons'>
+          
+      </div>
+      <h1>Ссылка</h1>
+      <div className='link'>
+        <Link value={"Ссылка"}/>
+      </div>
+      <h1>Чекбокс</h1>
+      <div className='checkbox'>
+        <Checkbox/>
+      </div>
+      <h1>Радиокнопка</h1>
+      <div className='radiobutton'>
+        <Radiobutton/>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.btn-secondary {
+    padding: 10px 25px;
+    color: #0ea744;
+    background: white;
+    border: 1px solid #0ea744;
+    border-radius: 30px;
+    font-size: 90%;
+    text-decoration: none;
+    margin: 0% 2%;
+}
+
+.btn-secondary:hover{
+    border: 2px solid #3B8C42;
+    padding: 9px 24px;
+}
+
+.btn-secondary:active{
+    background:  #BFFF9F;
+}
+
+.btn-secondary:disabled {
+    background:  #F5F0EE;
+    border: 2px solid #C9B5AE;
+    color: #C9B5AE;
+}
