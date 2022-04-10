@@ -1,0 +1,10 @@
+.buttons{
+    justify-content: space-between;
+    margin-top: 3%;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
