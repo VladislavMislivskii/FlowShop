@@ -1,0 +1,18 @@
+.icon-del{
+    width: 18px;
+    height: 21px;
+    background-image: url('../images/delete_normal.png');
+    
+}
+
+.icon-del:hover{
+    width: 20px;
+    height: 21px;
+    background-image: url('../images/delete_hover.png');
+}
+
+.icon-del:active{
+    width: 18px;
+    height: 21px;
+    background-image: url('../images/delete_active.png');
+}

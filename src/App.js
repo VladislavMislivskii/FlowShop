@@ -1,45 +1,55 @@
 import React from 'react';
-import Btn_primary from './components/Btn_primary';
-import Btn_primary_disabled from './components/Btn_primary_disabled';
-import Btn_secondary from './components/Btn_secondary';
-import Btn_secondary_disabled from './components/Btn_secondary_disabled';
-import Checkbox from './components/Checkbox';
+import Icon_bag from './components/Icon_bag';
+import Icon_cart from './components/Icon_bag';
+import Icon_delete from './components/Icon_delete';
 import Link from './components/Link';
-import Radiobutton from './components/Radiobutton';
-import "./styles/kit_style.css"
+import './styles/kit_style.css'
+import './styles/btn_primary.css'
+import './styles/btn_secondary.css'
+import './styles/checkbox.css'
+import './styles/radiobutton.css'
 
 function App() {
   return (
     <div className="App">
       <h1>UI kit</h1>
+
       <h2>Кнопки</h2>
       <div className='buttons'>
           Primary
-          <Btn_primary value={"Кнопка"}/>
-          <Btn_primary_disabled value={"Кнопка"}/>
+          <button class="btn-primary" href='#'>Кнопка</button>
+          <button class="btn-primary" href='#' disabled>Кнопка</button>
         </div>
         <div className='buttons'>
           Secondary
-          <Btn_secondary value={"Кнопка"}/>
-          <Btn_secondary_disabled value={"Кнопка"}/>
+          <button class = "btn-secondary">Кнопка</button>
+          <button class = "btn-secondary" disabled>Кнопка</button>
         </div>
+
       <h2>Иконки</h2>
       <div className='icons'>
-          
+          <p>Иконка 1</p>
+          <Icon_bag/>
+          <p>Иконка 2</p>
+          <Icon_delete/>
       </div>
+
       <h2>Ссылка</h2>
-      <div className='link'>
-        <Link value={"Ссылка"}/>
-      </div>
+      <Link value={"Ссылка"}/>
+
       <h2>Чекбокс</h2>
       <div className='checkbox'>
-        <Checkbox/>
-        <Checkbox/>
-        <Checkbox/>
+      <input class="custom-checkbox" type="checkbox" id="color-1" name="color-1" value="indigo"/><label for="color-1">Текст</label>
+      <input class="custom-checkbox" type="checkbox" id="color-2" name="color-1" value="indigo"/><label for="color-2">Текст</label>
+      <input class="custom-checkbox" type="checkbox" id="color-3" name="color-1" value="indigo" disabled/><label for="color-3">Текст</label>
+      <input class="custom-checkbox" type="checkbox" id="color-4" name="color-1" value="indigo"/><label for="color-4">Текст</label>
       </div>
+
       <h2>Радиокнопка</h2>
       <div className='radiobutton'>
-        <Radiobutton/>
+      <input class="custom-radio" type="radio" id="color-5" name="color" value="indigo1" /><label for="color-5">Положение 1</label>
+      <input class="custom-radio" type="radio" id="color-6" name="color" value="indigo1" /><label for="color-6">Положение 2</label>
+      <input class="custom-radio" type="radio" id="color-7" name="color" value="indigo1" /><label for="color-7">Положение 3</label>
       </div>
     </div>
   );

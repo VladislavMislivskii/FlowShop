@@ -3,6 +3,7 @@
     position: absolute;
     z-index: -1;
     opacity: 0;
+    margin-bottom: 0.5%;
   }
 
   /* для элемента label связанного с .custom-radio */
@@ -10,6 +11,7 @@
     display: inline-flex;
     align-items: center;
     user-select: none;
+    margin-bottom: 0.5%;
   }
 
   /* создание в label псевдоэлемента  before со следующими стилями */
