@@ -3,7 +3,7 @@ import "../styles/icon_bag.css"
 
 const Icon_bag = () => {
   return (
-    <div class="icon-bag"></div>
+    <div class = "icon-bag"></div>
   )
 }
 

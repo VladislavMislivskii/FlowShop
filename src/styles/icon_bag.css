@@ -1,16 +1,18 @@
 .icon-bag{
-    width: 20px;
-    height: 22px;
+    float: left;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 0%;
+    width: 22px;
+    height: 23px;
+    background: no-repeat;
     background-image: url('../images/bag_normal.png');
-    
 }
 
 .icon-bag:hover{
-    width: 22px;
     background-image: url('../images/bag_hover.png');
 }
 
 .icon-bag:active{
-    width: 20px;
     background-image: url('../images/bag_active.png');
 }

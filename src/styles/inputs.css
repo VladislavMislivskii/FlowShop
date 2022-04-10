@@ -1,0 +1,37 @@
+.div-text-normal{
+    padding: 2px 5px;
+    width: 154px;
+    height: 18px;
+    border: 1px solid #a7a4a3;
+    border-radius: 20px;
+    float: left;
+    margin: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.disabled{
+    background-color: #F5F0EE;
+    border: 0;
+}
+
+.error{
+    border: 2px solid #FF968C; 
+}
+
+.text-normal{
+    width: 150px;
+    height: 15px;
+    border: 0;
+    outline: none;
+}
+
+.div-text-normal:hover{
+    border: 2px solid #a7a4a3;
+    padding: 2px 3px;
+}
+
+.text-normal:disabled{
+    background-color: #F5F0EE;
+    color: #a7a4a3;
+}
